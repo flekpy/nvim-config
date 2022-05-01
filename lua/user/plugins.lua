@@ -97,6 +97,9 @@ return packer.startup(function(use)
   -- делает комменты в jsx файлах
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+  -- линтер
+  use "dense-analysis/ale"
+
   -- Git
   use "lewis6991/gitsigns.nvim"
 
