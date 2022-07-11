@@ -21,6 +21,17 @@ vim.g.nvim_tree_icons = {
   },
 }
 
+vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
+vim.g.nvim_tree_root_folder_modifier = ':t' -- This is the default. See :help filename-modifiers for more options
+
+vim.g.nvim_tree_show_icons = {
+  git = 1,
+  folders = 1,
+  files = 1,
+  folder_arrows = 1, -- conflicts with renderer.indent_markers
+}
+
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -42,7 +53,7 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
-  auto_close = true,
+  -- auto_close = true,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
@@ -98,15 +109,15 @@ nvim_tree.setup {
     cmd = "trash",
     require_confirm = true,
   },
-  quit_on_open = 0,
-  git_hl = 1,
-  disable_window_picker = 0,
-  root_folder_modifier = ":t",
-  show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
-    tree_width = 30,
-  },
+  -- quit_on_open = 0,
+  -- git_hl = 1,
+  -- disable_window_picker = 0,
+  -- root_folder_modifier = ":t",
+  -- show_icons = {
+   -- git = 1,
+   -- folders = 1,
+   -- files = 1,
+   -- folder_arrows = 1,
+   -- tree_width = 30,
+  -- },
 }
